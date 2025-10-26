@@ -16,6 +16,7 @@ def login_first(browser, base_url, pytestconfig):
     print('获取项目的根目录：', pytestconfig.rootpath)
     storage_path = pytestconfig.rootpath.joinpath('auth/login_state.json')
     context.storage_state(path=storage_path)
+    context.close()
 
 @pytest.fixture(scope="session")
 def browser_context_args(browser_context_args, playwright, pytestconfig):
