@@ -3,6 +3,7 @@ from pages.login_page import LoginPage
 from playwright.sync_api import expect
 
 class TestLoginPage:
+    """登录用例"""
 
     @pytest.fixture(scope="function", autouse=True)
     def for_each(self, page):

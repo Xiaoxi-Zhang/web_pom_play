@@ -1,0 +1,3 @@
+获取项目的根目录： D:\Project\web_pom_play
+for each--start: 打开新页面访问注册页
+for each--end: 后置操作

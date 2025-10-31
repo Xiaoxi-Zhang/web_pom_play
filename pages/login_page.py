@@ -1,6 +1,7 @@
 from playwright.sync_api import Page
 
 class LoginPage:
+    """登录页面封装"""
 
     def __init__(self, page: Page):
         self.page = page
