@@ -1,6 +1,7 @@
 import pytest
 from pages.login_page import LoginPage
 
+
 @pytest.fixture(scope="session", autouse=True)
 def login_first(browser, base_url, pytestconfig):
     """全局先登录"""
@@ -29,5 +30,6 @@ def browser_context_args(browser_context_args, playwright, pytestconfig):
     """
     return {
         "storage_state": pytestconfig.rootpath.joinpath("auth/login_state.json"),
-        **browser_context_args,
+        **browser_context_args
     }
+

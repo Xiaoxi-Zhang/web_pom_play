@@ -9,6 +9,7 @@ class AddProjectPage:
         self.locator_publish_app = page.get_by_label("所属应用:")
         self.locator_project_desc = page.get_by_label("项目描述:")
         self.locator_save_button = page.get_by_text('点击提交')
+        self.locator_boot_box = page.locator('.bootbox-body')
 
     def navigate(self):
         self.page.goto('/add_project.html')
@@ -24,3 +25,15 @@ class AddProjectPage:
 
     def click_save_button(self):
         self.locator_save_button.click()
+
+    def input_project(self, name: str, app: str, desc: str) -> None:
+        """
+        新增项目
+        :param name: 项目名称
+        :param app: 发布app
+        :param desc: 描述
+        :return: None
+        """
+        self.locator_project_name.fill(name)
+        self.locator_publish_app.fill(app)
+        self.locator_project_desc.fill(desc)

@@ -1,6 +1,8 @@
 from pytest import Item
 import allure
 
+# 本地插件注册
+pytest_plugins = ['plugins.pytest_playwright']
 
 def pytest_runtest_call(item: Item): # noqa
     # 动态添加测试类的 allure.feature()

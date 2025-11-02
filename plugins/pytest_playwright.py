@@ -523,7 +523,7 @@ class ArtifactsRecorder:
                 # --------- 把截图放入allure报告 以下代码新增 --------------
                 allure.attach.file(
                     screenshot_path,
-                    name=f"{request.node.name}-{human_readable_status}-{index + 1}",
+                    name=f"{self._request.node.name}-{human_readable_status}-{index + 1}",
                     attachment_type=allure.attachment_type.PNG
                 )
                 # --------- 把截图放入allure报告 --------------
@@ -566,7 +566,7 @@ class ArtifactsRecorder:
                     # 放入视频
                     allure.attach.file(
                         self._build_artifact_test_folder(video_file_name),
-                        name=f"{request.node.name}-{human_readable_status}-{index + 1}",
+                        name=f"{self._request.node.name}-{human_readable_status}-{index + 1}",
                         attachment_type=allure.attachment_type.WEBM
                     )
                 except Error:
